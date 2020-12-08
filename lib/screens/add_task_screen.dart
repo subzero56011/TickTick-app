@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:todoey_flutter/models/task.dart';
 import 'package:provider/provider.dart';
-import 'package:todoey_flutter/models/task_data.dart';
+import 'package:ticktick/models/task_data.dart';
 
 class AddTaskScreen extends StatelessWidget {
   @override
@@ -15,7 +14,7 @@ class AddTaskScreen extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(20.0),
+            topLeft: Radius.circular(20.0),
             topRight: Radius.circular(20.0),
           ),
         ),
@@ -27,15 +26,27 @@ class AddTaskScreen extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 30.0,
-                color: Colors.lightBlueAccent,
+                color: Color(0xFF00c057),
               ),
             ),
             TextField(
+              decoration: InputDecoration(
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Color(0xFF00c057)),
+                ),
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Color(0xFF00c057)),
+                ),
+              ),
+              cursorColor: Color(0xFF00c057),
               autofocus: true,
               textAlign: TextAlign.center,
               onChanged: (newText) {
                 newTaskTitle = newText;
               },
+            ),
+            SizedBox(
+              height: 20,
             ),
             FlatButton(
               child: Text(
@@ -44,9 +55,10 @@ class AddTaskScreen extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-              color: Colors.lightBlueAccent,
+              color: Color(0xFF00c057),
               onPressed: () {
-                Provider.of<TaskData>(context).addTask(newTaskTitle);
+                Provider.of<TaskData>(context, listen: false)
+                    .addTask(newTaskTitle);
                 Navigator.pop(context);
               },
             ),

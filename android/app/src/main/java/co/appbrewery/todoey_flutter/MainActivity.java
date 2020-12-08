@@ -1,4 +1,4 @@
-package co.appbrewery.todoey_flutter;
+package co.appbrewery.ticktick;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

@@ -1,10 +1,10 @@
 import 'package:flutter/foundation.dart';
-import 'package:todoey_flutter/models/task.dart';
+import 'package:ticktick/models/task.dart';
 import 'dart:collection';
 
 class TaskData extends ChangeNotifier {
   List<Task> _tasks = [
-    Task(name: 'Buy milk'),
+    Task(name: 'Buy misk'),
     Task(name: 'Buy eggs'),
     Task(name: 'Buy bread'),
   ];
